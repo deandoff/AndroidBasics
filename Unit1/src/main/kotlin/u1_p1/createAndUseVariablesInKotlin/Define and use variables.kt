@@ -1,4 +1,4 @@
-package path1.createAndUseVariablesInKotlin
+package u1_p1.createAndUseVariablesInKotlin
 
 fun main () {
     printCount()

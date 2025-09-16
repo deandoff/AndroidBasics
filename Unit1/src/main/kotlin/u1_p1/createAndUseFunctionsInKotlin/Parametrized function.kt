@@ -1,4 +1,4 @@
-package path1.createAndUseFunctionsInKotlin
+package u1_p1.createAndUseFunctionsInKotlin
 
 fun birthdayGreeting (name: String): String {
     val nameGreeting = "Happy Birthday, $name!"

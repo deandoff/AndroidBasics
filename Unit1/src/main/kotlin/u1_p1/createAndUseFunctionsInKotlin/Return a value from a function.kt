@@ -1,4 +1,4 @@
-package path1.createAndUseFunctionsInKotlin
+package u1_p1.createAndUseFunctionsInKotlin
 
 fun main() {
     println(birthdayGreetingString())

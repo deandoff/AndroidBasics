@@ -1,4 +1,4 @@
-package path1.yourFirstProgramInKotlin
+package u1_p1.yourFirstProgramInKotlin
 
 fun main() {
     println("Hello, World!")

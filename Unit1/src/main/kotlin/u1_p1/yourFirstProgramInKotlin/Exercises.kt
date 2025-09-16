@@ -1,4 +1,4 @@
-package path1.yourFirstProgramInKotlin
+package u1_p1.yourFirstProgramInKotlin
 
 //should out 1 2 3 in console
 fun exercise1 () {

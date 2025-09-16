@@ -1,4 +1,4 @@
-package path1.practiceProblems
+package u1_p1.practiceProblems
 
 fun main() {
     printMessages()
