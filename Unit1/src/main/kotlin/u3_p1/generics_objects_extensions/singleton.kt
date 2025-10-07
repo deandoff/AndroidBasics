@@ -1,5 +1,7 @@
 package u3_p1.generics_objects_extensions
 
+import u3_p1.generics_objects_extensions.Quiz.StudentProgress.printProgressBar
+
 class Quiz {
     val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
     val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
@@ -8,9 +10,20 @@ class Quiz {
     companion object StudentProgress {
         var total: Int = 10
         var answered: Int = 3
+
+        fun Quiz.StudentProgress.printProgressBar() {
+            repeat(Quiz.answered) { print("▓") }
+            repeat(Quiz.total - Quiz.answered) { print("▒") }
+            println()
+            println(Quiz.progressText)
+
+        }
     }
 }
 
+val Quiz.StudentProgress.progressText: String
+    get() = "${answered} of ${total} answered"
+
 fun main() {
-    println("${Quiz.answered} of ${Quiz.total} answered.")
+    Quiz.printProgressBar()
 }
