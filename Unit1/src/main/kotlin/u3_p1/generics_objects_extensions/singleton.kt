@@ -16,6 +16,29 @@ class Quiz : ProgressPrintable {
         println(progressText)
     }
 
+    fun printQuiz() {
+        question1.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question2.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question3.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+    }
+
+
+
     val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
     val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
     val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
@@ -28,5 +51,7 @@ class Quiz : ProgressPrintable {
 
 
 fun main() {
-    Quiz().printProgressBar()
+    Quiz().apply {
+        printQuiz()
+    }
 }
