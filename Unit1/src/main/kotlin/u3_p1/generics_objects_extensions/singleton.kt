@@ -1,8 +1,21 @@
 package u3_p1.generics_objects_extensions
 
-import u3_p1.generics_objects_extensions.Quiz.StudentProgress.printProgressBar
+interface ProgressPrintable {
+    val progressText: String
+    fun printProgressBar()
+}
 
-class Quiz {
+class Quiz : ProgressPrintable {
+    override val progressText: String
+        get() = "${answered} of ${total} answered"
+
+    override fun printProgressBar() {
+        repeat(Quiz.answered) { print("▓") }
+        repeat(Quiz.total - Quiz.answered) { print("▒") }
+        println()
+        println(progressText)
+    }
+
     val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
     val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
     val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
@@ -10,20 +23,10 @@ class Quiz {
     companion object StudentProgress {
         var total: Int = 10
         var answered: Int = 3
-
-        fun Quiz.StudentProgress.printProgressBar() {
-            repeat(Quiz.answered) { print("▓") }
-            repeat(Quiz.total - Quiz.answered) { print("▒") }
-            println()
-            println(Quiz.progressText)
-
-        }
     }
 }
 
-val Quiz.StudentProgress.progressText: String
-    get() = "${answered} of ${total} answered"
 
 fun main() {
-    Quiz.printProgressBar()
+    Quiz().printProgressBar()
 }
